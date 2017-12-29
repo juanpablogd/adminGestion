@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\afectacionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Afectacions';
+$this->title = 'Afectación';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="afectacion-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Afectacion', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear - Afectación', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

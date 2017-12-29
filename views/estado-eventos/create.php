@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\estadoEventos */
 
-$this->title = 'Create Estado Eventos';
+$this->title = 'Crear Estado de Eventos';
 $this->params['breadcrumbs'][] = ['label' => 'Estado Eventos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

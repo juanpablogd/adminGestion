@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\tipoIncendio */
 
-$this->title = 'Create Tipo Incendio';
+$this->title = 'Crear Tipo de Incendio';
 $this->params['breadcrumbs'][] = ['label' => 'Tipo Incendios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
