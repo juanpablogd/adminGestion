@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
+use app\models\eventos;
+use kartik\date\DatePicker;
 /* @var $this yii\web\View */
 /* @var $model app\models\descripcion */
 /* @var $form yii\widgets\ActiveForm */
@@ -11,18 +14,28 @@ use kartik\select2\Select2;
 <div class="descripcion-form">
 
     <?php $form = ActiveForm::begin(); ?>
-<?php    // Normal select with ActiveForm & model
-    echo $form->field($model, 'id_app_eventos')->widget(Select2::classname(), [
-        'data' => ArrayHelper::map(eventos::find()->orderBy(['evento'=>SORT_ASC])->all(),'id','evento'),
-        'language' => 'es',
-        'options' => ['placeholder' => 'Seleccione un evento ...'],
+    <?php    // Normal select with ActiveForm & model
+        echo $form->field($model, 'id_app_eventos')->widget(Select2::classname(), [
+            'data' => ArrayHelper::map(eventos::find()->orderBy(['evento'=>SORT_ASC])->all(),'id','evento'),
+            'language' => 'es',
+            'options' => ['placeholder' => 'Seleccione un evento ...'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]); 
+    ?>
+<?php
+    echo DatePicker::widget([
+        'model' => $model,
+        'attribute' => 'fecha_reporte',
+        'options' => ['placeholder' => 'Seleccione fecha de reporte...'],
+        'form' => $form,
         'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); 
+            'format' => 'yyyy-mm-dd',
+            'autoclose' => true,
+        ]
+    ]);
 ?>
-    <?= $form->field($model, 'id_app_eventos')->textInput() ?>
-
     <?= $form->field($model, 'fecha_reporte')->textInput() ?>
 
     <?= $form->field($model, 'barrio')->textInput(['maxlength' => true]) ?>

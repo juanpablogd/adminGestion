@@ -75,7 +75,7 @@ class descripcion extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_app_eventos' => 'Id App Eventos',
+            'id_app_eventos' => 'Evento',
             'fecha_reporte' => 'Fecha Reporte',
             'barrio' => 'Barrio',
             'punto' => 'Punto',
