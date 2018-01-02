@@ -49,11 +49,14 @@ use app\models\tipoIncendio;
         ]); 
     ?>
     <?php
+        $hoy = date("Y-m-d");   //echo $hoy;
         echo DatePicker::widget([
             'model' => $model,
+            'name' => 'fecha_reporte',
             'attribute' => 'fecha_reporte',
             'options' => ['placeholder' => 'Seleccione fecha de reporte...'],
             'form' => $form,
+            'value' => $hoy,
             'pluginOptions' => [
                 'format' => 'yyyy-mm-dd',
                 'autoclose' => true,
@@ -100,29 +103,48 @@ use app\models\tipoIncendio;
     <?= $form->field($model, 'longitud')->textInput() ?>
 
     <?php
+        echo '<label class="control-label">Fechas del Evento</label>';
         echo DatePicker::widget([
             'model' => $model,
             'attribute' => 'fecha_inicio',
-            'options' => ['placeholder' => 'Seleccione fecha de Inicio...'],
+            'attribute2' => 'fecha_culminacion',
+            'language' => 'es',
+            'options' => ['placeholder' => 'Fecha inicio'],
+            'options2' => ['placeholder' => 'Fecha culminación'],
+            'separator' => '<i class="glyphicon glyphicon-resize-horizontal"></i>',
+            'type' => DatePicker::TYPE_RANGE,
             'form' => $form,
             'pluginOptions' => [
                 'format' => 'yyyy-mm-dd',
                 'autoclose' => true,
             ]
         ]);
+        echo "</br>";
+/*        echo DatePicker::widget([
+            'model' => $model,
+            'attribute' => 'fecha_inicioA',
+            'options' => ['placeholder' => 'Seleccione fecha de Inicio...'],
+            'type' => DatePicker::TYPE_INLINE,
+            'form' => $form,
+            'pluginOptions' => [
+                'format' => 'yyyy-mm-dd',
+                'autoclose' => true,
+            ]
+        ]); */
     ?>
 
     <?php
-        echo DatePicker::widget([
+ /*       echo DatePicker::widget([
             'model' => $model,
-            'attribute' => 'fecha_reporte',
+            'attribute' => 'fecha_culminacionA',
             'options' => ['placeholder' => 'Seleccione fecha de Culminación...'],
+            'type' => DatePicker::TYPE_INLINE,
             'form' => $form,
             'pluginOptions' => [
                 'format' => 'yyyy-mm-dd',
                 'autoclose' => true,
             ]
-        ]);
+        ]); */
     ?>
 
     <?= $form->field($model, 'acciones')->textarea(['rows' => 6]) ?>

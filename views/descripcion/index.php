@@ -23,25 +23,33 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'id_app_eventos',
+            [
+                'label' => 'Evento',
+                'format' => 'ntext',
+                'attribute'=>'evento',
+                'value' => function($model) {
+                    return $model->idAppEventos['evento'];
+                },
+            ],
+            [
+                'label' => 'Estado',
+                'format' => 'ntext',
+                'attribute'=>'estado',
+                'value' => function($model) {
+                    return $model->idAppEstadoEvento['estado'];
+                },
+            ],
             'fecha_reporte',
-            'barrio',
-            'punto',
-            // 'latitud',
-            // 'longitud',
-            // 'fecha_inicio',
-            // 'fecha_culminacion',
-            // 'id_app_estado_evento',
-            // 'acciones:ntext',
-            // 'comentarios:ntext',
-            // 'responsable_atencion',
-            // 'descripcion_atencion',
-            // 'id_app_tipo_incencio',
-            // 'codigo_mun',
-            // 'id_vereda',
-
+            [
+                'label' => 'Municipio',
+                'format' => 'ntext',
+                'attribute'=>'nombre_mun',
+                'value' => function($model) {
+                    return $model->codigoMun['nombre_mun'];
+                },
+            ],
+            'fecha_inicio',
+            'fecha_culminacion',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

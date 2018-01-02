@@ -12,6 +12,9 @@ use app\models\descripcion;
  */
 class descripcionSearch extends descripcion
 {
+    public $estado;
+    public $evento;
+    public $nombre_mun;
     /**
      * @inheritdoc
      */
@@ -19,7 +22,7 @@ class descripcionSearch extends descripcion
     {
         return [
             [['id', 'id_app_eventos', 'id_app_estado_evento', 'responsable_atencion', 'id_app_tipo_incencio', 'id_vereda'], 'integer'],
-            [['fecha_reporte', 'barrio', 'punto', 'fecha_inicio', 'fecha_culminacion', 'acciones', 'comentarios', 'descripcion_atencion', 'codigo_mun'], 'safe'],
+            [['fecha_reporte', 'barrio', 'punto', 'fecha_inicio', 'fecha_culminacion', 'acciones', 'comentarios', 'descripcion_atencion', 'codigo_mun','evento', 'estado', 'nombre_mun'], 'safe'],
             [['latitud', 'longitud'], 'number'],
         ];
     }
@@ -45,9 +48,9 @@ class descripcionSearch extends descripcion
         $query = descripcion::find();
 
         // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['attributes' => ['evento','estado','fecha_reporte','nombre_mun', 'fecha_inicio', 'fecha_culminacion']]
         ]);
 
         $this->load($params);
@@ -59,26 +62,20 @@ class descripcionSearch extends descripcion
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'id_app_eventos' => $this->id_app_eventos,
-            'fecha_reporte' => $this->fecha_reporte,
-            'latitud' => $this->latitud,
-            'longitud' => $this->longitud,
-            'fecha_inicio' => $this->fecha_inicio,
-            'fecha_culminacion' => $this->fecha_culminacion,
-            'id_app_estado_evento' => $this->id_app_estado_evento,
-            'responsable_atencion' => $this->responsable_atencion,
-            'id_app_tipo_incencio' => $this->id_app_tipo_incencio,
-            'id_vereda' => $this->id_vereda,
-        ]);
+        $query->joinWith('codigoMun');
+        $query->joinWith('idAppEstadoEvento');
+        $query->joinWith('idAppEventos');
+        //expresiones para TIMESTAMP
+        $exp_fecha_reporte = new \yii\db\Expression('(fecha_reporte::text)');
+        $exp_fecha_inicio = new \yii\db\Expression('(fecha_inicio::text)');
+        $exp_fecha_culminacion = new \yii\db\Expression('(fecha_culminacion::text)');
 
-        $query->andFilterWhere(['like', 'barrio', $this->barrio])
-            ->andFilterWhere(['like', 'punto', $this->punto])
-            ->andFilterWhere(['like', 'acciones', $this->acciones])
-            ->andFilterWhere(['like', 'comentarios', $this->comentarios])
-            ->andFilterWhere(['like', 'descripcion_atencion', $this->descripcion_atencion])
-            ->andFilterWhere(['like', 'codigo_mun', $this->codigo_mun]);
+        $query->andFilterWhere(['like', 'riesgosydesastres.app_eventos.evento', $this->evento])
+            ->andFilterWhere(['like', 'riesgosydesastres.app_estado_evento.estado', $this->estado])
+            ->andFilterWhere(['like', $exp_fecha_reporte, $this->fecha_reporte])
+            ->andFilterWhere(['like', 'administrativa.g_municipio_simp.nombre_mun', $this->nombre_mun])
+            ->andFilterWhere(['like', $exp_fecha_inicio, $this->fecha_inicio])
+            ->andFilterWhere(['like', $exp_fecha_culminacion, $this->fecha_culminacion]);
 
         return $dataProvider;
     }

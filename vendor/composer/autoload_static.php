@@ -33,6 +33,9 @@ class ComposerStaticInit9bc2d8d3312795bca7c7f90bad271bcd
         'k' => 
         array (
             'kartik\\select2\\' => 15,
+            'kartik\\helpers\\' => 15,
+            'kartik\\form\\' => 12,
+            'kartik\\field\\' => 13,
             'kartik\\date\\' => 12,
             'kartik\\base\\' => 12,
         ),
@@ -119,6 +122,18 @@ class ComposerStaticInit9bc2d8d3312795bca7c7f90bad271bcd
         'kartik\\select2\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2',
+        ),
+        'kartik\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers',
+        ),
+        'kartik\\form\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform',
+        ),
+        'kartik\\field\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-field-range',
         ),
         'kartik\\date\\' => 
         array (

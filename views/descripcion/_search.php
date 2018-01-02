@@ -15,39 +15,17 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <?= $form->field($model, 'evento') ?>
 
-    <?= $form->field($model, 'id_app_eventos') ?>
+    <?= $form->field($model, 'estado') ?>
 
     <?= $form->field($model, 'fecha_reporte') ?>
 
-    <?= $form->field($model, 'barrio') ?>
+    <?= $form->field($model, 'nombre_mun') ?>
 
-    <?= $form->field($model, 'punto') ?>
+    <?php  echo $form->field($model, 'fecha_inicio') ?>
 
-    <?php // echo $form->field($model, 'latitud') ?>
-
-    <?php // echo $form->field($model, 'longitud') ?>
-
-    <?php // echo $form->field($model, 'fecha_inicio') ?>
-
-    <?php // echo $form->field($model, 'fecha_culminacion') ?>
-
-    <?php // echo $form->field($model, 'id_app_estado_evento') ?>
-
-    <?php // echo $form->field($model, 'acciones') ?>
-
-    <?php // echo $form->field($model, 'comentarios') ?>
-
-    <?php // echo $form->field($model, 'responsable_atencion') ?>
-
-    <?php // echo $form->field($model, 'descripcion_atencion') ?>
-
-    <?php // echo $form->field($model, 'id_app_tipo_incencio') ?>
-
-    <?php // echo $form->field($model, 'codigo_mun') ?>
-
-    <?php // echo $form->field($model, 'id_vereda') ?>
+    <?php  echo $form->field($model, 'fecha_culminacion') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
