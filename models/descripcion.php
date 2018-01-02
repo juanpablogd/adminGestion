@@ -52,7 +52,7 @@ class descripcion extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_app_eventos', 'id_app_estado_evento', 'acciones', 'responsable_atencion', 'descripcion_atencion'], 'required'],
+            [['id_app_eventos','fecha_reporte','codigo_mun', 'fecha_inicio', 'fecha_culminacion','id_app_estado_evento', 'acciones', 'responsable_atencion', 'descripcion_atencion'], 'required'],
             [['id_app_eventos', 'id_app_estado_evento', 'responsable_atencion', 'id_app_tipo_incencio', 'id_vereda'], 'integer'],
             [['fecha_reporte', 'fecha_inicio', 'fecha_culminacion'], 'safe'],
             [['latitud', 'longitud'], 'number'],
@@ -83,14 +83,14 @@ class descripcion extends \yii\db\ActiveRecord
             'longitud' => 'Longitud',
             'fecha_inicio' => 'Fecha Inicio',
             'fecha_culminacion' => 'Fecha Culminacion',
-            'id_app_estado_evento' => 'Id App Estado Evento',
+            'id_app_estado_evento' => 'Estado Evento',
             'acciones' => 'Acciones',
             'comentarios' => 'Comentarios',
             'responsable_atencion' => 'Responsable Atencion',
             'descripcion_atencion' => 'Descripcion Atencion',
-            'id_app_tipo_incencio' => 'Id App Tipo Incencio',
-            'codigo_mun' => 'Codigo Mun',
-            'id_vereda' => 'Id Vereda',
+            'id_app_tipo_incencio' => 'Tipo Incendio',
+            'codigo_mun' => 'Municipio',
+            'id_vereda' => 'Vereda',
         ];
     }
 

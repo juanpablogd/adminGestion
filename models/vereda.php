@@ -38,7 +38,6 @@ class vereda extends \yii\db\ActiveRecord
         return [
             [['__gid'], 'integer'],
             [['st_area_sh', 'st_length_'], 'number'],
-            [['geom'], 'string'],
             [['nombre_ver'], 'string', 'max' => 50],
             [['cod_mun'], 'string', 'max' => 5],
             [['cod_dane'], 'string', 'max' => 11],
@@ -61,7 +60,6 @@ class vereda extends \yii\db\ActiveRecord
             'nombre_lar' => 'Nombre Lar',
             'st_area_sh' => 'St Area Sh',
             'st_length_' => 'St Length',
-            'geom' => 'Geom',
         ];
     }
 

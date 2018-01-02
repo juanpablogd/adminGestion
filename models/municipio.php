@@ -39,7 +39,6 @@ class municipio extends \yii\db\ActiveRecord
     {
         return [
             [['codigo_mun'], 'required'],
-            [['geom'], 'string'],
             [['codigo_mun'], 'string', 'max' => 5],
             [['nombre_mun'], 'string', 'max' => 100],
             [['codigo_pro'], 'string', 'max' => 10],
@@ -55,7 +54,6 @@ class municipio extends \yii\db\ActiveRecord
         return [
             'codigo_mun' => 'Codigo Mun',
             'nombre_mun' => 'Nombre Mun',
-            'geom' => 'Geom',
             'codigo_pro' => 'Codigo Pro',
             'padre' => 'Padre',
         ];
