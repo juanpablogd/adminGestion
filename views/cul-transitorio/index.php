@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\culTransitorioSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cul Transitorios';
+$this->title = 'Cultivos Transitorios';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cul-transitorio-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Cul Transitorio', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Cultivo Transitorio', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

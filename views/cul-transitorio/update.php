@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\culTransitorio */
 
-$this->title = 'Update Cul Transitorio: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Cul Transitorios', 'url' => ['index']];
+$this->title = 'Actualizar Cultivo Transitorio: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Cultivos Transitorios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="cul-transitorio-update">
 

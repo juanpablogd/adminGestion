@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\culTransitorio */
 
-$this->title = 'Create Cul Transitorio';
-$this->params['breadcrumbs'][] = ['label' => 'Cul Transitorios', 'url' => ['index']];
+$this->title = 'Crear Cultivo Transitorio';
+$this->params['breadcrumbs'][] = ['label' => 'Cultivos Transitorios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cul-transitorio-create">

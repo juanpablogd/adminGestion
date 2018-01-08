@@ -40,7 +40,7 @@ class culTransitorio extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'cultivo_tra' => 'Cultivo Tra',
+            'cultivo_tra' => 'Cultivo Transitorio',
         ];
     }
 

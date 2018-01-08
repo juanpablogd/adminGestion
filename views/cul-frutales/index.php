@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\culFrutalesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cul Frutales';
+$this->title = 'Cultivos Frutales';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cul-frutales-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Cul Frutales', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear cultivo frutal', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

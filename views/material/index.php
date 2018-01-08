@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\materialSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Materials';
+$this->title = 'Materiales';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="material-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Material', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Material', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

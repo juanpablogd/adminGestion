@@ -40,7 +40,7 @@ class culFrutales extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'cultivo_fru' => 'Cultivo Fru',
+            'cultivo_fru' => 'Cultivo Frutal',
         ];
     }
 

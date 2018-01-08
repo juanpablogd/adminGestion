@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\culPermanente */
 
-$this->title = 'Create Cul Permanente';
-$this->params['breadcrumbs'][] = ['label' => 'Cul Permanentes', 'url' => ['index']];
+$this->title = 'Crear Cultivo Permanente';
+$this->params['breadcrumbs'][] = ['label' => 'Cultivos Permanentes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cul-permanente-create">

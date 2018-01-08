@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\culFrutales */
 
-$this->title = 'Create Cul Frutales';
-$this->params['breadcrumbs'][] = ['label' => 'Cul Frutales', 'url' => ['index']];
+$this->title = 'Crear Cultivo Frutal';
+$this->params['breadcrumbs'][] = ['label' => 'Cultivos Frutales', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cul-frutales-create">

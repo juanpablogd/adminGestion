@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\culPermanenteSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cul Permanentes';
+$this->title = 'Cultivos Permanentes';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cul-permanente-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Cul Permanente', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Cultivo Permanente', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

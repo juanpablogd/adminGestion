@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\culPermanente */
 
-$this->title = 'Update Cul Permanente: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Cul Permanentes', 'url' => ['index']];
+$this->title = 'Actualizar Cultivo Permanente: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Cultivos Permanentes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="cul-permanente-update">
 

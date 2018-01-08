@@ -40,7 +40,7 @@ class culPermanente extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'cultivo_per' => 'Cultivo Per',
+            'cultivo_per' => 'Cultivo Permanente',
         ];
     }
 
