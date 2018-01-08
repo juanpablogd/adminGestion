@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'fecha_culminacion',
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} {update} {delete} {fcontrol} {gesri}',
+                'template' => '{view} {update} {apoyo} {seguimiento} {materiales} {afectacion} {decreto} {delete}',
                 'buttons'  => [
                     'view' => function($url, $searchModel) {
                             return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, [
@@ -72,31 +72,61 @@ $this->params['breadcrumbs'][] = $this->title;
                     }
                 ],
                 'buttons'  => [
-                    'fcontrol' => function($url, $searchModel, $key, $index) {
+                    'apoyo' => function($url, $searchModel, $key, $index) {
                             return Html::a('<span class="glyphicon glyphicon-calendar"></span>', $url, [
-                                    'title' => 'Ad. Control',])."</br>";
+                                    'title' => 'Ad. Apoyo',])."</br>";
                     }
                 ],
                 'buttons'  => [
-                    'gesri' => function($url) {
+                    'decreto' => function($url) {
                             return Html::a('<span class="glyphicon glyphicon-alert"></span>', $url, [
-                                    'title' => 'Ad. Riesgos',]);
+                                    'title' => 'Ad. Decreto',]);
+                    }
+                ],
+                'buttons'  => [
+                    'seguimiento' => function($url, $searchModel) {
+                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $searchModel['id']], [
+                                    'title' => Yii::t('app', 'Delete'), 'data-confirm' => Yii::t('app', 'Seguro que desea eliminar este elemento?'),'data-method' => 'post']);
+                    }
+                ],
+                'buttons'  => [
+                    'materiales' => function($url, $searchModel, $key, $index) {
+                            return Html::a('<span class="glyphicon glyphicon-calendar"></span>', $url, [
+                                    'title' => 'Ad. Materiales',])."</br>";
+                    }
+                ],
+                'buttons'  => [
+                    'afectacion' => function($url) {
+                            return Html::a('<span class="glyphicon glyphicon-alert"></span>', $url, [
+                                    'title' => 'Ad. Afectación',]);
                     }
                 ],
                 'urlCreator' => function ($action, $searchModel, $key, $index) {    //echo $action." ";
                     if ($action === 'view') {
-                            $url = 'index.php?r=embarazo/view&id='.$searchModel['id'];
+                            $url = 'index.php?r=descripcion/view&id='.$searchModel['id'];
                             return $url;
                     }
                     if($action === 'update') {
-                            $url = 'index.php?r=embarazo/update&id='.$searchModel['id'];
+                            $url = 'index.php?r=descripcion/update&id='.$searchModel['id'];
                             return $url;
                     }
-                    if($action === 'fcontrol') {
+                    if($action === 'apoyo') {
                             $url = 'index.php?r=fechacontrol/index&id='.$searchModel['id'];
                             return $url;
                     }
-                    if($action === 'gesri') {
+                    if($action === 'seguimiento') {
+                            $url = 'index.php?r=embarazo/update&id='.$searchModel['id'];
+                            return $url;
+                    }
+                    if($action === 'materiales') {
+                            $url = 'index.php?r=fechacontrol/index&id='.$searchModel['id'];
+                            return $url;
+                    }
+                    if($action === 'afectacion') {
+                            $url = 'index.php?r=afectacion/index&id='.$searchModel['id'];
+                            return $url;
+                    }
+                    if($action === 'decreto') {
                             $url = 'index.php?r=gestanteriesgo/index&id='.$searchModel['id'];
                             return $url;
                     }

@@ -33,9 +33,10 @@ class AfectacionController extends Controller
      * Lists all afectacion models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id)
     {
         $searchModel = new afectacionSearch();
+        $searchModel->id_app_descripcion = $id;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

@@ -144,8 +144,13 @@ class ActionColumn extends Column
     {
         $this->initDefaultButton('view', 'eye-open');
         $this->initDefaultButton('update', 'pencil');
+		$this->initDefaultButton('apoyo', 'export');
+		$this->initDefaultButton('seguimiento', 'tasks');
+		$this->initDefaultButton('materiales', 'equalizer');
+		$this->initDefaultButton('afectacion', 'flash');
+		$this->initDefaultButton('decreto', 'file');		
         $this->initDefaultButton('delete', 'trash', [
-            'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
+            'data-confirm' => Yii::t('yii', 'Está seguro que desea eliminar este elemento?'),
             'data-method' => 'post',
         ]);
     }
@@ -167,6 +172,21 @@ class ActionColumn extends Column
                         break;
                     case 'update':
                         $title = Yii::t('yii', 'Update');
+                        break;
+                    case 'apoyo':
+                        $title = Yii::t('yii', 'Ad. apoyo');
+                        break;
+                    case 'seguimiento':
+                        $title = Yii::t('yii', 'Ad. seguimiento');
+                        break;
+                    case 'materiales':
+                        $title = Yii::t('yii', 'Ad. materiales');
+                        break;
+                    case 'afectacion':
+                        $title = Yii::t('yii', 'Ad. afectacion');
+                        break;
+                    case 'decreto':
+                        $title = Yii::t('yii', 'Ad. decreto');
                         break;
                     case 'delete':
                         $title = Yii::t('yii', 'Delete');
