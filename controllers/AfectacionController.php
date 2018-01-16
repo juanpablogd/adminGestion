@@ -67,7 +67,7 @@ class AfectacionController extends Controller
         $model = new afectacion();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id, 'id_app_descripcion' => $_GET['id_app_descripcion']]);
         } else {
             return $this->render('create', [
                 'model' => $model,

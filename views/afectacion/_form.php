@@ -12,7 +12,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_app_descripcion')->textInput() ?>
+<?php
+    echo $form->field($model, 'id_app_descripcion')
+            ->hiddenInput(['value' => $_GET['id_app_descripcion']])
+            ->label(false)
+?>
 
     <?= $form->field($model, 'no_muertos')->textInput() ?>
 

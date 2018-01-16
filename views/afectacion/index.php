@@ -16,16 +16,39 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Crear - Afectación', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear - Afectación', ['create', 'id_app_descripcion' => $_GET['id']], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
+            [
+                'label' => 'F. inicio',
+                'format' => 'ntext',
+                'attribute'=>'fecha_inicio',
+                'value' => function($model) {
+                    return $model->idAppDescripcion['fecha_inicio'];
+                },
+            ],
+            [
+                'label' => 'Evento',
+                'format' => 'ntext',
+                'attribute'=>'evento',
+                'value' => function($model) {
+                    return $model->idAppDescripcion['evento'];
+                },
+            ],
+            [
+                'label' => 'Municipio',
+                'format' => 'ntext',
+                'attribute'=>'nombre_mun',
+                'value' => function($model) {
+                    return $model->idAppDescripcion['nombre_mun'];
+                },
+            ],
             //'id',
-            'id_app_descripcion',
+            //'id_app_descripcion',
             'no_muertos',
             'no_heridos',
             'no_desaparecidos',
