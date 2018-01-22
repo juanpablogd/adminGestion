@@ -50,13 +50,13 @@ class seguimiento extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'tramite_ungrd' => 'Tramite Ungrd',
+            'tramite_ungrd' => 'Trámite Ungrd',
             'atendido' => 'Atendido',
-            'num_memorando' => 'Num Memorando',
-            'analisis_solicitud' => 'Analisis Solicitud',
-            'organis_intervencion' => 'Organis Intervencion',
+            'num_memorando' => 'No. Memorando',
+            'analisis_solicitud' => 'Análisis Solicitud',
+            'organis_intervencion' => 'Organ. Intervención',
             'fecha' => 'Fecha',
-            'id_app_descripcion' => 'Id App Descripcion',
+            'id_app_descripcion' => 'Descripción',
         ];
     }
 

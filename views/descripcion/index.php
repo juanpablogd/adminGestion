@@ -115,7 +115,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             return $url;
                     }
                     if($action === 'seguimiento') {
-                            $url = 'index.php?r=embarazo/update&id='.$searchModel['id'];
+                            $url = 'index.php?r=seguimiento/index&id='.$searchModel['id'];
                             return $url;
                     }
                     if($action === 'materiales') {

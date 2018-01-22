@@ -7,7 +7,8 @@ use yii\helpers\Html;
 /* @var $model app\models\seguimiento */
 
 $this->title = 'Create Seguimiento';
-$this->params['breadcrumbs'][] = ['label' => 'Seguimientos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Descripción', 'url' => ['descripcion/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Seguimientos', 'url' => ['index', 'id' => $_GET['id_app_descripcion']]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="seguimiento-create">
