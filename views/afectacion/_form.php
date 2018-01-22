@@ -2,7 +2,13 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
+use app\models\culTransitorio;
+use app\models\culPermanente;
+use app\models\culFrutales;
+use app\models\culHortalizas;
+use app\models\culOtrasHortalizas;
 /* @var $this yii\web\View */
 /* @var $model app\models\afectacion */
 /* @var $form yii\widgets\ActiveForm */
@@ -90,23 +96,64 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'no_peces')->textInput() ?>
 
-    <?= $form->field($model, 'id_app_cul_transitorio')->textInput() ?>
-
+<?php    // Normal select with ActiveForm & model
+     echo $form->field($model, 'id_app_cul_transitorio')->widget(Select2::classname(), [
+         'data' => ArrayHelper::map(culTransitorio::find()->orderBy(['cultivo_tra'=>SORT_ASC])->all(),'id','cultivo_tra'),
+         'language' => 'es',
+         'options' => ['placeholder' => 'Seleccione un cultivo transitorio ...'],
+         'pluginOptions' => [
+             'allowClear' => true
+         ],
+     ]); 
+?>
     <?= $form->field($model, 'no_cul_transitorio')->textInput() ?>
 
-    <?= $form->field($model, 'id_app_cul_permanente')->textInput() ?>
-
+<?php    // Normal select with ActiveForm & model
+     echo $form->field($model, 'id_app_cul_permanente')->widget(Select2::classname(), [
+         'data' => ArrayHelper::map(culPermanente::find()->orderBy(['cultivo_per'=>SORT_ASC])->all(),'id','cultivo_per'),
+         'language' => 'es',
+         'options' => ['placeholder' => 'Seleccione un cultivo permanente ...'],
+         'pluginOptions' => [
+             'allowClear' => true
+         ],
+     ]); 
+?>
     <?= $form->field($model, 'no_cul_permanente')->textInput() ?>
 
-    <?= $form->field($model, 'id_app_cul_hortalizas')->textInput() ?>
-
+<?php    // Normal select with ActiveForm & model
+     echo $form->field($model, 'id_app_cul_hortalizas')->widget(Select2::classname(), [
+         'data' => ArrayHelper::map(culHortalizas::find()->orderBy(['cultivo_hor'=>SORT_ASC])->all(),'id','cultivo_hor'),
+         'language' => 'es',
+         'options' => ['placeholder' => 'Seleccione un cultivo de Hortalizas ...'],
+         'pluginOptions' => [
+             'allowClear' => true
+         ],
+     ]); 
+?>
     <?= $form->field($model, 'no_cul_hortalizas')->textInput() ?>
 
-    <?= $form->field($model, 'id_app_cul_otras_hortalizas')->textInput() ?>
-
+<?php    // Normal select with ActiveForm & model
+     echo $form->field($model, 'id_app_cul_otras_hortalizas')->widget(Select2::classname(), [
+         'data' => ArrayHelper::map(culOtrasHortalizas::find()->orderBy(['cultivo_oho'=>SORT_ASC])->all(),'id','cultivo_oho'),
+         'language' => 'es',
+         'options' => ['placeholder' => 'Seleccione un cultivo de Otras Hortalizas ...'],
+         'pluginOptions' => [
+             'allowClear' => true
+         ],
+     ]); 
+?>
     <?= $form->field($model, 'no_cul_otras_hortalizas')->textInput() ?>
 
-    <?= $form->field($model, 'id_app_cul_frutales')->textInput() ?>
+<?php    // Normal select with ActiveForm & model
+     echo $form->field($model, 'id_app_cul_frutales')->widget(Select2::classname(), [
+         'data' => ArrayHelper::map(culFrutales::find()->orderBy(['cultivo_fru'=>SORT_ASC])->all(),'id','cultivo_fru'),
+         'language' => 'es',
+         'options' => ['placeholder' => 'Seleccione un cultivo Frutal ...'],
+         'pluginOptions' => [
+             'allowClear' => true
+         ],
+     ]); 
+?>
 
     <?= $form->field($model, 'no_cul_frutales')->textInput() ?>
 

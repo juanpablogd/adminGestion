@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\afectacion */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Afectaciones', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Afectaciones', 'url' => ['index','id' => $_GET['id_app_descripcion']]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="afectacion-view">
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
+        <?= Html::a('Actualizar', ['update', 'id' => $model->id,'id_app_descripcion' => $_GET['id_app_descripcion']], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => $model->id,'id_app_descripcion' => $_GET['id_app_descripcion']], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Seguro que desea Eliminar este elemento?',
@@ -28,8 +28,30 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'id_app_descripcion',
+            [
+                'label' => 'F. inicio',
+                'format' => 'ntext',
+                'attribute'=>'fecha_inicio',
+                'value' => function($model) {
+                    return $model->idAppDescripcion['fecha_inicio'];
+                },
+            ],
+            [
+                'label' => 'Evento',
+                'format' => 'ntext',
+                'attribute'=>'evento',
+                'value' => function($model) {
+                    return $model->idAppDescripcion->idAppEventos['evento'];
+                },
+            ],
+            [
+                'label' => 'Municipio',
+                'format' => 'ntext',
+                'attribute'=>'nombre_mun',
+                'value' => function($model) {
+                    return $model->idAppDescripcion->codigoMun['nombre_mun'];
+                },
+            ],
             'no_muertos',
             'no_heridos',
             'no_desaparecidos',
@@ -66,15 +88,50 @@ $this->params['breadcrumbs'][] = $this->title;
             'no_equinos',
             'no_aves',
             'no_peces',
-            'id_app_cul_transitorio',
+            [
+                'label' => 'Cul. Transitorio',
+                'format' => 'ntext',
+                'attribute'=>'cultivo_tra',
+                'value' => function($model) {
+                    return $model->idAppCulTransitorio['cultivo_tra'];
+                },
+            ],
             'no_cul_transitorio',
-            'id_app_cul_permanente',
+            [
+                'label' => 'Cul. Permanente',
+                'format' => 'ntext',
+                'attribute'=>'cultivo_per',
+                'value' => function($model) {
+                    return $model->idAppCulPermanente['cultivo_per'];
+                },
+            ],
             'no_cul_permanente',
-            'id_app_cul_hortalizas',
+            [
+                'label' => 'Cul. Hortalizas',
+                'format' => 'ntext',
+                'attribute'=>'cultivo_hor',
+                'value' => function($model) {
+                    return $model->idAppCulHortalizas['cultivo_hor'];
+                },
+            ],
             'no_cul_hortalizas',
-            'id_app_cul_otras_hortalizas',
+            [
+                'label' => 'Cul. Otras Hortalizas',
+                'format' => 'ntext',
+                'attribute'=>'cultivo_oho',
+                'value' => function($model) {
+                    return $model->idAppCulOtrasHortalizas['cultivo_oho'];
+                },
+            ],
             'no_cul_otras_hortalizas',
-            'id_app_cul_frutales',
+            [
+                'label' => 'Cul. Frutales',
+                'format' => 'ntext',
+                'attribute'=>'cultivo_fru',
+                'value' => function($model) {
+                    return $model->idAppCulFrutales['cultivo_fru'];
+                },
+            ],
             'no_cul_frutales',
             'no_frutales_disper',
         ],
