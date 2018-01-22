@@ -54,6 +54,12 @@ $config = [
             ],
         ],
         */
+        'Formatter' => [
+            'class' => 'yii\i18n\[b]F[/b]ormatter',
+            'thousandSeparator' => ',',
+            'decimalSeparator' => '.',
+            'currencyCode' => '$'
+        ],
     ],
     'params' => $params,
 ];

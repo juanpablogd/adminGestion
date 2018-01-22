@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use kartik\date\DatePicker;
 /* @var $this yii\web\View */
 /* @var $model app\models\apoyo */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,7 +12,26 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_app_descripcion')->textInput() ?>
+<?php
+    echo $form->field($model, 'id_app_descripcion')
+            ->hiddenInput(['value' => $_GET['id_app_descripcion']])
+            ->label(false)
+?>
+    <?php
+        $hoy = date("Y-m-d");   //echo $hoy;
+        echo DatePicker::widget([
+            'model' => $model,
+            'name' => 'fecha_entrega',
+            'attribute' => 'fecha_entrega',
+            'options' => ['placeholder' => 'Seleccione fecha de entrega...'],
+            'form' => $form,
+            'value' => $hoy,
+            'pluginOptions' => [
+                'format' => 'yyyy-mm-dd',
+                'autoclose' => true,
+            ]
+        ]);
+    ?>
 
     <?= $form->field($model, 'subsidio_arriendo')->textInput() ?>
 
@@ -29,8 +48,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'trasnf_economicas')->textInput() ?>
 
     <?= $form->field($model, 'recurs_ejecutados')->textInput() ?>
-
-    <?= $form->field($model, 'fecha_entrega')->textInput() ?>
 
     <?= $form->field($model, 'objeto_fngr')->textInput() ?>
 
@@ -57,7 +74,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'don_otras')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -111,7 +111,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             return $url;
                     }
                     if($action === 'apoyo') {
-                            $url = 'index.php?r=fechacontrol/index&id='.$searchModel['id'];
+                            $url = 'index.php?r=apoyo/index&id='.$searchModel['id'];
                             return $url;
                     }
                     if($action === 'seguimiento') {

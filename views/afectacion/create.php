@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\afectacion */
 
 $this->title = 'Crear Afectación';
-$this->params['breadcrumbs'][] = ['label' => 'Afectaciones', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Afectaciones', 'url' => ['index', 'id' => $_GET['id_app_descripcion']]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="afectacion-create">

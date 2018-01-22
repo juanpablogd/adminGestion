@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\afectacion */
 
 $this->title = 'Actualizar Afectación: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Afectaciones', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Afectaciones', 'url' => ['index', 'id' => $_GET['id_app_descripcion']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id, 'id_app_descripcion' => $_GET['id_app_descripcion']]];
 $this->params['breadcrumbs'][] = 'Actualizar';
 ?>
