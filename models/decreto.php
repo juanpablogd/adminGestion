@@ -50,10 +50,10 @@ class decreto extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'no_decreto' => 'No Decreto',
+            'no_decreto' => 'No. Decreto',
             'fecha_inicio' => 'Fecha Inicio',
             'fecha_final' => 'Fecha Final',
-            'plan_accion' => 'Plan Accion',
+            'plan_accion' => 'Plan Acción',
             'elaboro_edan' => 'Elaboro Edan',
             'rud' => 'Rud',
             'id_app_descripcion' => 'Id App Descripcion',

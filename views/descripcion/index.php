@@ -127,7 +127,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             return $url;
                     }
                     if($action === 'decreto') {
-                            $url = 'index.php?r=gestanteriesgo/index&id='.$searchModel['id'];
+                            $url = 'index.php?r=decreto/index&id='.$searchModel['id'];
                             return $url;
                     }
                 }

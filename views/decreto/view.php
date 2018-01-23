@@ -7,7 +7,8 @@ use yii\widgets\DetailView;
 /* @var $model app\models\decreto */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Decretos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Descripción', 'url' => ['descripcion/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Decretos', 'url' => ['index','id' => $_GET['id_app_descripcion']]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="decreto-view">
@@ -15,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Actualizar', ['update', 'id' => $model->id,'id_app_descripcion' => $_GET['id_app_descripcion']], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Borrar', ['delete', 'id' => $model->id,'id_app_descripcion' => $_GET['id_app_descripcion']], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Seguro que desea eliminar este elemento?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -28,14 +29,36 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            [
+                'label' => 'F. inicio',
+                'format' => 'ntext',
+                'attribute'=>'fecha_inicio',
+                'value' => function($model) {
+                    return $model->idAppDescripcion['fecha_inicio'];
+                },
+            ],
+            [
+                'label' => 'Evento',
+                'format' => 'ntext',
+                'attribute'=>'evento',
+                'value' => function($model) {
+                    return $model->idAppDescripcion->idAppEventos['evento'];
+                },
+            ],
+            [
+                'label' => 'Municipio',
+                'format' => 'ntext',
+                'attribute'=>'nombre_mun',
+                'value' => function($model) {
+                    return $model->idAppDescripcion->codigoMun['nombre_mun'];
+                },
+            ],
             'no_decreto',
             'fecha_inicio',
             'fecha_final',
             'plan_accion',
             'elaboro_edan',
             'rud',
-            'id_app_descripcion',
         ],
     ]) ?>
 

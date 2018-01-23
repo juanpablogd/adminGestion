@@ -6,8 +6,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\decreto */
 
-$this->title = 'Create Decreto';
-$this->params['breadcrumbs'][] = ['label' => 'Decretos', 'url' => ['index']];
+$this->title = 'Crear Decreto';
+$this->params['breadcrumbs'][] = ['label' => 'Descripción', 'url' => ['descripcion/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Decretos', 'url' => ['index', 'id' => $_GET['id_app_descripcion']]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="decreto-create">
