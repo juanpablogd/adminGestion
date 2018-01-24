@@ -66,7 +66,7 @@ class EntregaMaterialesController extends Controller
         $model = new entregaMateriales();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id, 'id_app_descripcion' => $_GET['id_app_descripcion']]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -85,7 +85,7 @@ class EntregaMaterialesController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id, 'id_app_descripcion' => $_GET['id_app_descripcion']]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -99,11 +99,11 @@ class EntregaMaterialesController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionDelete($id)
+    public function actionDelete($id,$id_app_descripcion)
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['index', 'id' => $id_app_descripcion]);
     }
 
     /**

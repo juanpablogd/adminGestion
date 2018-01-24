@@ -48,9 +48,9 @@ class entregaMateriales extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'valor' => 'Valor',
-            'des_entregam' => 'Des Entregam',
-            'id_app_descripcion' => 'Id App Descripcion',
-            'id_app_material' => 'Id App Material',
+            'des_entregam' => 'Descripción Entrega Mat.',
+            'id_app_descripcion' => 'Descripcion',
+            'id_app_material' => 'Material',
         ];
     }
 

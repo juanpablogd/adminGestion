@@ -6,8 +6,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\entregaMateriales */
 
-$this->title = 'Create Entrega Materiales';
-$this->params['breadcrumbs'][] = ['label' => 'Entrega Materiales', 'url' => ['index']];
+$this->title = 'Adicionar Entrega Materiales';
+$this->params['breadcrumbs'][] = ['label' => 'Descripción', 'url' => ['descripcion/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Entrega Materiales', 'url' => ['index', 'id' => $_GET['id_app_descripcion']]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="entrega-materiales-create">
