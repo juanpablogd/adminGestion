@@ -33,9 +33,10 @@ class EntregaMaterialesController extends Controller
      * Lists all entregaMateriales models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id)
     {
         $searchModel = new entregaMaterialesSearch();
+        $searchModel->id_app_descripcion = $id;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

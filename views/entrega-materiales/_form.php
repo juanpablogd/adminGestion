@@ -12,14 +12,13 @@ use app\models\material;
 ?>
 
 <div class="entrega-materiales-form">
+    <?php $form = ActiveForm::begin(); ?>
 
 <?php
     echo $form->field($model, 'id_app_descripcion')
             ->hiddenInput(['value' => $_GET['id_app_descripcion']])
             ->label(false)
 ?>
-
-    <?php $form = ActiveForm::begin(); ?>
 
 <?php    // Normal select with ActiveForm & model
      echo $form->field($model, 'id_app_material')->widget(Select2::classname(), [

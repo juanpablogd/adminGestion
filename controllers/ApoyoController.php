@@ -36,6 +36,7 @@ class ApoyoController extends Controller
     public function actionIndex($id)
     {
         $searchModel = new apoyoSearch();
+        $searchModel->id_app_descripcion = $id;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

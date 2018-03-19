@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = 'Afectación';
 $this->params['breadcrumbs'][] = ['label' => 'Descripción', 'url' => ['descripcion/index']];
+$this->params['breadcrumbs'][] = ['label' => $_GET['id'], 'url' => ['descripcion/view', 'id' => $_GET['id']]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="afectacion-index">

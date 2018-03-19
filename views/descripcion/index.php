@@ -48,8 +48,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->codigoMun['nombre_mun'];
                 },
             ],
-            'fecha_inicio',
-            'fecha_culminacion',
+            'id_caso_secad',
+            'des_clas_nueve',
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} {update} {apoyo} {seguimiento} {materiales} {afectacion} {decreto} {delete}',
@@ -119,7 +119,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             return $url;
                     }
                     if($action === 'materiales') {
-                            $url = 'index.php?r=fechacontrol/index&id='.$searchModel['id'];
+                            $url = 'index.php?r=entrega-materiales/index&id='.$searchModel['id'];
                             return $url;
                     }
                     if($action === 'afectacion') {

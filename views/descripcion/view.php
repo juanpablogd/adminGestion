@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
 /* @var $this yii\web\View */
 /* @var $model app\models\descripcion */
 
@@ -19,10 +18,16 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Seguro desea eliminar este elemento?',
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('+ Apoyo ', ['apoyo/index', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('+ Material ', ['entrega-materiales/index', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('+ Seguimiento ', ['seguimiento/index', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('+ Afectación ', ['afectacion/index', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+
+
     </p>
 
     <?= DetailView::widget([
@@ -70,7 +75,98 @@ $this->params['breadcrumbs'][] = $this->title;
             'comentarios:ntext',
             'responsable_atencion',
             'descripcion_atencion',
+            'id_caso_secad',
+            'clas_nueve',
+            'des_clas_nueve',
+            'telefono'
         ],
     ]) ?>
+
+    <h3> Apoyo </h3>
+
+    <?= DetailView::widget([
+        'model' => $modelapoyo,
+        'attributes' => [
+            'fecha_entrega',
+            [
+                'format' => 'Decimal',
+                'attribute' => 'subsidio_arriendo',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'menajes',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'aport_alimentacion',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'materiales_const',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'sacos',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'otros',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'trasnf_economicas',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'recurs_ejecutados',
+            ],
+            'objeto_fngr',
+            [
+                'format' => 'Decimal',
+                'attribute' => 'apoyo_fngr_recuperacion',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'aport_munucipio',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'aport_bomberos',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'aport_epc',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'aport_fuerz_armadas',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'aport_defen_civil',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'aport_car',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'aport_otras',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'don_nacionanles',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'don_internacional',
+            ],
+            [
+                'format' => 'Decimal',
+                'attribute' => 'don_otras',
+            ],
+        ],
+    ]) ?> 
+
 
 </div>

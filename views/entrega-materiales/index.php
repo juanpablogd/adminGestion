@@ -9,6 +9,7 @@ use yii\grid\GridView;
 
 $this->title = 'Entrega Materiales';
 $this->params['breadcrumbs'][] = ['label' => 'Descripción', 'url' => ['descripcion/index']];
+$this->params['breadcrumbs'][] = ['label' => $_GET['id'], 'url' => ['descripcion/view', 'id' => $_GET['id']]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="entrega-materiales-index">
@@ -56,8 +57,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->idAppMaterial['des_material'];
                 },
             ],
-            'valor',
             'des_entregam',
+            'valor',
             [
                 'class' => 'yii\grid\ActionColumn',
                 'template' => '{view} {update} {delete}',
@@ -81,11 +82,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'urlCreator' => function ($action, $searchModel, $key, $index) {
                     if ($action === 'view') {
-                            $url = 'index.php?r=apoyo/view&id='.$searchModel['id'].'&id_app_descripcion='.$_GET['id'];
+                            $url = 'index.php?r=entrega-materiales/view&id='.$searchModel['id'].'&id_app_descripcion='.$_GET['id'];
                             return $url;
                     }
                     if($action === 'update') {
-                            $url = 'index.php?r=apoyo/update&id='.$searchModel['id'].'&id_app_descripcion='.$_GET['id'];
+                            $url = 'index.php?r=entrega-materiales/update&id='.$searchModel['id'].'&id_app_descripcion='.$_GET['id'];
                             return $url;
                     }
                 }

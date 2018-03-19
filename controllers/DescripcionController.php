@@ -8,7 +8,9 @@ use app\models\descripcionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use app\models\apoyo;
+use yii\data\ActiveDataProvider;
+use yii\db\Query;
 /**
  * DescripcionController implements the CRUD actions for descripcion model.
  */
@@ -51,8 +53,18 @@ class DescripcionController extends Controller
      */
     public function actionView($id)
     {
+        
+        $modelapoyo = new apoyo();
+        
+        $leadCount = apoyo::find()->where(['id_app_descripcion' => $id])->count();
+
+        if($leadCount > 0) $modelapoyo = apoyo::find()->where(['id_app_descripcion' => $id])->one();
+
+        $model = $this->findModel($id);
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'modelapoyo' => $modelapoyo,
         ]);
     }
 

@@ -49,7 +49,7 @@ class entregaMateriales extends \yii\db\ActiveRecord
             'id' => 'ID',
             'valor' => 'Valor',
             'des_entregam' => 'Descripción Entrega Mat.',
-            'id_app_descripcion' => 'Descripcion',
+            'id_app_descripcion' => 'Descripción',
             'id_app_material' => 'Material',
         ];
     }

@@ -22,7 +22,7 @@ class descripcionSearch extends descripcion
     {
         return [
             [['id', 'id_app_eventos', 'id_app_estado_evento', 'responsable_atencion', 'id_app_tipo_incencio', 'id_vereda'], 'integer'],
-            [['fecha_reporte', 'barrio', 'punto', 'fecha_inicio', 'fecha_culminacion', 'acciones', 'comentarios', 'descripcion_atencion', 'codigo_mun','evento', 'estado', 'nombre_mun'], 'safe'],
+            [['fecha_reporte', 'barrio', 'punto', 'fecha_inicio', 'fecha_culminacion', 'acciones', 'comentarios', 'descripcion_atencion', 'codigo_mun','evento', 'estado', 'nombre_mun' ,'id_caso_secad','des_clas_nueve'], 'safe'],
             [['latitud', 'longitud'], 'number'],
         ];
     }
@@ -50,7 +50,7 @@ class descripcionSearch extends descripcion
         // add conditions that should always apply here
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => ['attributes' => ['evento','estado','fecha_reporte','nombre_mun', 'fecha_inicio', 'fecha_culminacion']]
+            'sort' => ['attributes' => ['evento','estado','fecha_reporte','nombre_mun', 'fecha_inicio', 'fecha_culminacion','id_caso_secad','des_clas_nueve']]
         ]);
 
         $this->load($params);
@@ -75,7 +75,9 @@ class descripcionSearch extends descripcion
             ->andFilterWhere(['like', $exp_fecha_reporte, $this->fecha_reporte])
             ->andFilterWhere(['like', 'administrativa.g_municipio_simp.nombre_mun', $this->nombre_mun])
             ->andFilterWhere(['like', $exp_fecha_inicio, $this->fecha_inicio])
-            ->andFilterWhere(['like', $exp_fecha_culminacion, $this->fecha_culminacion]);
+            ->andFilterWhere(['like', $exp_fecha_culminacion, $this->fecha_culminacion])
+            ->andFilterWhere(['like', 'id_caso_secad', $this->id_caso_secad])
+            ->andFilterWhere(['like', 'des_clas_nueve', $this->des_clas_nueve]);
 
         return $dataProvider;
     }

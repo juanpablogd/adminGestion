@@ -56,7 +56,7 @@ class descripcion extends \yii\db\ActiveRecord
             [['id_app_eventos', 'id_app_estado_evento', 'responsable_atencion', 'id_app_tipo_incencio', 'id_vereda'], 'integer'],
             [['fecha_reporte', 'fecha_inicio', 'fecha_culminacion'], 'safe'],
             [['latitud', 'longitud'], 'number'],
-            [['acciones', 'comentarios', 'descripcion_atencion'], 'string'],
+            [['acciones', 'comentarios', 'descripcion_atencion','id_caso_secad','clas_nueve','des_clas_nueve','telefono'], 'string'],
             [['barrio'], 'string', 'max' => 200],
             [['punto'], 'string', 'max' => 1000],
             [['codigo_mun'], 'string', 'max' => 5],
@@ -90,7 +90,10 @@ class descripcion extends \yii\db\ActiveRecord
             'descripcion_atencion' => 'Descripcion Atención',
             'id_app_tipo_incencio' => 'Tipo Incendio',
             'codigo_mun' => 'Municipio',
-            'id_vereda' => 'Vereda',
+            'id_caso_secad' => 'Cod SECAD',
+            'clas_nueve' => 'Cod Nueve',
+            'des_clas_nueve' => 'Des. Nueve',
+            'telefono' => 'Teléfono',
         ];
     }
 
