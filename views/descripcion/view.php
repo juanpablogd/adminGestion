@@ -5,13 +5,13 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\descripcion */
 
-$this->title = $model->id;
+$this->title = $model->codigoMun['nombre_mun'];
 $this->params['breadcrumbs'][] = ['label' => 'Descripciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="descripcion-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h3><?= Html::encode($this->title) ?></h3>
 
     <p>
         <?= Html::a('Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
@@ -82,7 +82,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-    <h3> Apoyo </h3>
+    <h4> Apoyo </h4>
 
     <?= DetailView::widget([
         'model' => $modelapoyo,

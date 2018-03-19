@@ -59,7 +59,7 @@ AppAsset::register($this);
     <div class="container">
         <p class="pull-left">&copy; Gobernación de Cundinamarca <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right"> Desarrollado por SKAPHE SAS </p>
     </div>
 </footer>
 
